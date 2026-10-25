@@ -1,0 +1,409 @@
+{
+  "clips": [
+    {
+      "id": "intro",
+      "transcript": "أهلًا وسهلًا فيكم! أنا الإيه آي، مساعد زميلكم خالد، اللي صمّم لكم هالموقع. اليوم بنكتشف الفعل والفاعل والمفعول به، بأمثلة واضحة وتحديات نشارك فيها مع بعض. ركّزوا على المعنى، وخلّونا نبدأ!",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/4cddf51b-746f-47ac-af4b-606b2d160839.mp3"
+    },
+    {
+      "id": "verb",
+      "transcript": "الفعل كلمة تدلّ على حدث مرتبط بزمن. كَتَبَ فعل ماضٍ، ويَكْتُبُ فعل مضارع، واُكْتُبْ فعل أمر. في جملة: كَتَبَ الطَّالِبُ الدَّرْسَ، كلمة كَتَبَ هي الفعل؛ لأنّها تدلّ على الكتابة في الزمن الماضي.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/2192a34d-83ff-4af8-bba4-19f0b1dc84c3.mp3"
+    },
+    {
+      "id": "actor",
+      "transcript": "الفاعل اسم مرفوع يدلّ على مَن قام بالفعل أو اتّصف به. نسأل: مَن كَتَبَ الدَّرْسَ؟ الجواب: الطَّالِبُ. إذن الطَّالِبُ فاعل مرفوع، وعلامة رفعه الضمّة الظاهرة. وفي جملة: نَامَ الطِّفْلُ، الطِّفْلُ فاعل أيضًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/da79d5a9-37d5-457e-b0fa-6642f003714f.mp3"
+    },
+    {
+      "id": "object",
+      "transcript": "المفعول به اسم منصوب يدلّ على مَن أو ما وقع عليه فعل الفاعل. نسأل: ماذا كَتَبَ الطَّالِبُ؟ الجواب: الدَّرْسَ. إذن الدَّرْسَ مفعول به منصوب، وعلامة نصبه الفتحة الظاهرة. لا تحتوي كلّ جملة فعليّة على مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/0db26e3c-b1e3-4682-a95d-e6bd50399ba6.mp3"
+    },
+    {
+      "id": "method",
+      "transcript": "نبدأ بالفعل: ما الحدث؟ ثم نبحث عن الفاعل: من قام بهذا الفعل؟ ثم نسأل عن المفعول به: على من أو على ماذا وقع الفعل؟ تذكّروا: ليست كلّ جملة فعليّة بحاجة إلى مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d44e1abe-5ec3-4d6b-8836-71c5166e917d.mp3"
+    },
+    {
+      "id": "correct",
+      "transcript": "أحسنتم! إجابة صحيحة. لنفهم السبب معًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e66496ee-3481-404c-8896-046c37c9d3a3.mp3"
+    },
+    {
+      "id": "incorrect",
+      "transcript": "محاولة موفّقة للتعلّم. تأمّلوا الإجابة الصحيحة والتفسير، ثم تابعوا بثقة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/33aa6790-9538-4a6b-a283-7a2143e1cfa1.mp3"
+    },
+    {
+      "id": "finish",
+      "transcript": "يعطيكم العافية على مشاركتكم! تذكّروا الأسئلة الثلاثة: ما الحدث؟ مَن قام بالفعل أو اتّصف به؟ وعلى مَن أو على ماذا وقع الفعل؟ الفاعل مرفوع، والمفعول به منصوب. جرّبوا هالطريقة على جملة جديدة، وشكرًا لكم!",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/505358c6-edba-4bb5-9979-87035fb276f3.mp3"
+    },
+    {
+      "id": "goals",
+      "transcript": "في نهاية هذا الدرس، نميّز الفعل والفاعل والمفعول به، ونفسّر اختيارنا، ثم نكوّن جملة صحيحة. نفكّر أولًا، ونشارك إجاباتنا، ونستخدم المعنى والحركة الإعرابية دليلًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d92861d2-f3cc-41fa-a29e-ec6c0c8da8ea.mp3"
+    },
+    {
+      "id": "explore",
+      "transcript": "المسوا كلمات الجملة واحدة بعد أخرى. لكلّ كلمة دور: حدث، أو مَن قام بالحدث، أو ما وقع عليه. جرّبوا أمثلة الكتابة والزراعة والقراءة، واستمعوا إلى تفسير كلّ كلمة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/bcf8ac10-b998-4a94-a413-2873f4f1e71a.mp3"
+    },
+    {
+      "id": "quiz",
+      "transcript": "حان دوركم للمشاركة! اقرأوا السؤال، وفكّروا في المعنى، ثم اختاروا إجابة واحدة. بعد الاختيار يظهر التفسير. يمكنكم استخدام التلميح أو وقت التفكير، والإجابة الأولى وحدها تُحتسب.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/bedd93b9-6b45-4dfd-a424-7db907e9c5f4.mp3"
+    },
+    {
+      "id": "build",
+      "transcript": "رتّبوا الكلمات في هذا النشاط: الفعل أولًا، ثم الفاعل، ثم المفعول به. اضغطوا الكلمات، ثم زر تحقّق من جملتي. ولتغيير كلمة، اضغطوا عليها داخل الخانة. هذا نمط التدريب، وللعربية ترتيبات صحيحة أخرى.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/69336f49-02d2-444d-bda2-68bf4845500e.mp3"
+    },
+    {
+      "id": "example-write-0",
+      "transcript": "كَتَبَ: فعل ماضٍ مبنيّ على الفتح. يدلّ على حدوث الكتابة في الماضي.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/6397ab47-9117-459f-ac5c-721c96d5df91.mp3"
+    },
+    {
+      "id": "example-write-1",
+      "transcript": "الطّالِبُ: فاعل مرفوع، وعلامة رفعه الضمّة الظاهرة. هو مَن قام بالكتابة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/2b9316e7-c14b-45e9-8787-b43ea7c48c1d.mp3"
+    },
+    {
+      "id": "example-write-2",
+      "transcript": "الدَّرْسَ: مفعول به منصوب، وعلامة نصبه الفتحة الظاهرة. هو ما كتبه الطالب.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/af23dadb-33f4-44d0-885b-485a80bda061.mp3"
+    },
+    {
+      "id": "example-plant-0",
+      "transcript": "زَرَعَ: فعل ماضٍ مبنيّ على الفتح. يدلّ على حدوث الزراعة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/5138bf42-9be2-441d-90b6-aae8a028e318.mp3"
+    },
+    {
+      "id": "example-plant-1",
+      "transcript": "الْفَلّاحُ: فاعل مرفوع، وعلامة رفعه الضمّة الظاهرة. هو مَن قام بالزراعة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/83ef4498-1304-4e76-a8a6-22769bf8eaef.mp3"
+    },
+    {
+      "id": "example-plant-2",
+      "transcript": "الشَّجَرَةَ: مفعول به منصوب، وعلامة نصبه الفتحة الظاهرة. هي ما زرعه الفلّاح.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e4fe309a-7614-45e0-9ec9-8c2410088cd7.mp3"
+    },
+    {
+      "id": "example-read-0",
+      "transcript": "قَرَأَتْ: فعل ماضٍ مبنيّ على الفتح، والتاء للتأنيث لا محلّ لها من الإعراب.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/952e6dec-962c-4db1-8299-339c0bef3b5b.mp3"
+    },
+    {
+      "id": "example-read-1",
+      "transcript": "الْبِنْتُ: فاعل مرفوع، وعلامة رفعه الضمّة الظاهرة. هي مَن قامت بالقراءة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/01e6080f-2004-4c0e-b478-4f3b80bb6489.mp3"
+    },
+    {
+      "id": "example-read-2",
+      "transcript": "الْقِصَّةَ: مفعول به منصوب، وعلامة نصبه الفتحة الظاهرة. هي ما قرأته البنت.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c1303923-0229-4e35-9349-912c9fe42fc1.mp3"
+    },
+    {
+      "id": "explain-q1",
+      "transcript": "كَتَبَ هو الفعل؛ لأنّه يدلّ على حدث الكتابة في الزمن الماضي.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/529dccd0-5c5b-4527-9f38-9b5d0645d73e.mp3"
+    },
+    {
+      "id": "question-q1",
+      "transcript": "أيّ كلمة تدلّ على الفعل؟ كَتَبَ الطّالِبُ الدَّرْسَ. الخيارات: 1: الطّالِبُ. 2: كَتَبَ. 3: الدَّرْسَ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/48264bc8-3dc8-48c7-b168-ad05945bb54f.mp3"
+    },
+    {
+      "id": "explain-q2",
+      "transcript": "الطِّفْلُ هو الفاعل؛ فهو مَن قام بالشرب، وهو مرفوع بالضمّة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a2cd029a-d17e-457b-a7d1-b09f59f58974.mp3"
+    },
+    {
+      "id": "question-q2",
+      "transcript": "مَن الفاعل في هذه الجملة؟ شَرِبَ الطِّفْلُ الْحَلِيبَ. الخيارات: 1: شَرِبَ. 2: الْحَلِيبَ. 3: الطِّفْلُ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/733e32d1-46a7-45be-a2c7-8d6c65cc9625.mp3"
+    },
+    {
+      "id": "explain-q3",
+      "transcript": "الْكِتَابَ مفعول به؛ لأنّه ما قرأه خالد، وهو منصوب بالفتحة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/33ec34ef-2679-457f-809e-8e09aa6b8b60.mp3"
+    },
+    {
+      "id": "question-q3",
+      "transcript": "ما المفعول به في هذه الجملة؟ قَرَأَ خَالِدٌ الْكِتَابَ. الخيارات: 1: خَالِدٌ. 2: الْكِتَابَ. 3: قَرَأَ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f229fb81-c7ba-4543-b8fa-bd99e3daa8b7.mp3"
+    },
+    {
+      "id": "explain-q4",
+      "transcript": "الْمُعَلِّمُ فاعل مفرد مرفوع، وعلامة رفعه الضمّة الظاهرة على آخره.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f2aa51e4-80d6-4fca-af29-dc83469fc2a7.mp3"
+    },
+    {
+      "id": "question-q4",
+      "transcript": "ما علامة رفع «الْمُعَلِّمُ» هنا؟ شَرَحَ الْمُعَلِّمُ الدَّرْسَ. الخيارات: 1: الفتحة. 2: الكسرة. 3: الضمّة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/58061019-3b06-48e2-90af-dc2cf083912c.mp3"
+    },
+    {
+      "id": "explain-q5",
+      "transcript": "وَرْدَةً مفعول به منصوب بالفتحة. ويظهر تنوين الفتح لأنّ الكلمة نكرة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e753eb6c-4747-40ba-905f-a1e469b595e0.mp3"
+    },
+    {
+      "id": "question-q5",
+      "transcript": "أيّ ضبط صحيح للمفعول به؟ رَسَمَتْ مَرْيَمُ … الخيارات: 1: وَرْدَةٌ. 2: وَرْدَةً. 3: وَرْدَةٍ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/dce73b97-5f19-434e-84b6-f64ce3e52f9b.mp3"
+    },
+    {
+      "id": "explain-q6",
+      "transcript": "لا يوجد مفعول به؛ نام فعل لازم اكتفى بالفاعل. والطِّفْلُ فاعل، وليس مفعولًا به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/32c1c414-06fd-46d2-a59c-116ab3a6c833.mp3"
+    },
+    {
+      "id": "question-q6",
+      "transcript": "هل في هذه الجملة مفعول به؟ نَامَ الطِّفْلُ. الخيارات: 1: نعم، الطِّفْلُ. 2: لا يوجد مفعول به. 3: نعم، نَامَ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/b1bd22c8-4cab-4870-b9be-6c754d2d3502.mp3"
+    },
+    {
+      "id": "explain-q7",
+      "transcript": "الْبُسْتَانِيُّ هو الفاعل؛ فهو مَن قطف، وإن جاء بعد المفعول به. نحدّد الدور بالمعنى والإعراب، لا بالموقع وحده.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7189eaa1-fcc0-4980-a35e-188306ad7c03.mp3"
+    },
+    {
+      "id": "question-q7",
+      "transcript": "مَن الفاعل، رغم تغيّر ترتيب الكلمات؟ قَطَفَ الزَّهْرَةَ الْبُسْتَانِيُّ. الخيارات: 1: الْبُسْتَانِيُّ. 2: الزَّهْرَةَ. 3: قَطَفَ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/46582fc3-f5a9-4ef0-8d0e-ab35e750e870.mp3"
+    },
+    {
+      "id": "explain-q8",
+      "transcript": "رَكَلَ: فعل. اللّاعِبُ: فاعل قام بالركل. الْكُرَةَ: مفعول به وقع عليه الركل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/3a47be9f-5c2a-43fa-81e9-1baf32e1b145.mp3"
+    },
+    {
+      "id": "question-q8",
+      "transcript": "ما الترتيب الصحيح لأدوار الكلمات هنا؟ رَكَلَ اللّاعِبُ الْكُرَةَ. الخيارات: 1: رَكَلَ: فاعل، اللّاعِبُ: فعل، الْكُرَةَ: مفعول به. 2: رَكَلَ: فعل، اللّاعِبُ: مفعول به، الْكُرَةَ: فاعل. 3: رَكَلَ: فعل، اللّاعِبُ: فاعل، الْكُرَةَ: مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a24934a2-3502-419f-9c34-fd7960f9cdc2.mp3"
+    },
+    {
+      "id": "explain-q9",
+      "transcript": "الفعل يدلّ على حدث مرتبط بزمن، مثل كَتَبَ في الماضي، ويَكْتُبُ في الحاضر أو المستقبل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f46dc387-faa5-4990-abc8-9f6f0d2153bd.mp3"
+    },
+    {
+      "id": "question-q9",
+      "transcript": "أيّ وصف يعرّف الفعل؟  الخيارات: 1: اسم يدلّ على شخص. 2: كلمة تدلّ على حدث مرتبط بزمن. 3: اسم مجرور دائمًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/00ff693b-8a44-46e2-9c11-facff8b15c34.mp3"
+    },
+    {
+      "id": "explain-q10",
+      "transcript": "يَكْتُبُ فعل مضارع. كَتَبَ فعل ماضٍ، واُكْتُبْ فعل أمر.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/529e350b-9e22-4a41-9c70-ce4c7ec46532.mp3"
+    },
+    {
+      "id": "question-q10",
+      "transcript": "أيّ كلمة فعل مضارع؟  الخيارات: 1: اُكْتُبْ. 2: كَتَبَ. 3: يَكْتُبُ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/aadea337-de37-41f7-92d3-d9528944ea7a.mp3"
+    },
+    {
+      "id": "explain-q11",
+      "transcript": "الطَّبِيبَةُ فاعل؛ لأنّها مَن تقوم بالمساعدة، وهي مرفوعة بالضمّة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/23fa2a22-afd9-42bb-9aae-8ba11e3850b0.mp3"
+    },
+    {
+      "id": "question-q11",
+      "transcript": "أيّ كلمة هي الفاعل؟ تُسَاعِدُ الطَّبِيبَةُ الْمَرِيضَ. الخيارات: 1: الطَّبِيبَةُ. 2: الْمَرِيضَ. 3: تُسَاعِدُ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/24267b8c-276b-4c4c-bf5e-68b9d0c7b322.mp3"
+    },
+    {
+      "id": "explain-q12",
+      "transcript": "التُّفَّاحَةَ مفعول به منصوب بالفتحة؛ لأنّها ما أكله الولد.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/eade1d95-7c34-45ff-9496-872191a5bd97.mp3"
+    },
+    {
+      "id": "question-q12",
+      "transcript": "ما إعراب «التُّفَّاحَةَ»؟ أَكَلَ الْوَلَدُ التُّفَّاحَةَ. الخيارات: 1: فاعل مرفوع. 2: مفعول به منصوب. 3: فعل ماضٍ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/462285ab-b210-450f-9669-9453057c9555.mp3"
+    },
+    {
+      "id": "explain-q13",
+      "transcript": "العبارة خطأ؛ فقد يكتفي الفعل بفاعله، مثل: حَضَرَ الْمُعَلِّمُ، ونَامَ الطِّفْلُ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/ae9c0e71-56d2-498f-ae76-7012a7749981.mp3"
+    },
+    {
+      "id": "question-q13",
+      "transcript": "كلّ جملة فعليّة يجب أن تحتوي على مفعول به.  الخيارات: 1: صحيح. 2: خطأ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/0e029c86-56f2-4693-b612-b699917e33be.mp3"
+    },
+    {
+      "id": "explain-q14",
+      "transcript": "نسأل: مَن فتح الباب؟ فيكون الجواب: الْحَارِسُ، وهو الفاعل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/cf4c3078-4e22-42aa-9521-77ad19defc92.mp3"
+    },
+    {
+      "id": "question-q14",
+      "transcript": "أيّ سؤال يساعدنا على تحديد الفاعل؟ فَتَحَ الْحَارِسُ الْبَابَ. الخيارات: 1: متى فُتح الباب؟. 2: ماذا فتح الحارس؟. 3: مَن فتح الباب؟.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e4ecb454-9a73-4180-b2af-98c62ee861e4.mp3"
+    },
+    {
+      "id": "explain-q15",
+      "transcript": "الطّالِبُ هو مَن حفظ، فهو فاعل مرفوع. والنَّصَّ هو ما حفظه الطالب، فهو مفعول به منصوب.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7dd1a0bd-7a6b-43b6-a7a5-05d2b81d4926.mp3"
+    },
+    {
+      "id": "question-q15",
+      "transcript": "إذا كان الطالب هو الذي حفظ، فأيّ ضبط صحيح؟  الخيارات: 1: حَفِظَ الطّالِبَ النَّصُّ.. 2: حَفِظَ الطّالِبُ النَّصَّ.. 3: حَفِظَ الطّالِبِ النَّصِّ..",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/67fea9e1-6cfd-4c95-ac3f-af38db7998be.mp3"
+    },
+    {
+      "id": "explain-q16",
+      "transcript": "الزَّرْعَ مفعول به منصوب؛ لأنّه ما سقاه الفلّاح. أمّا الْفَلّاحُ فهو الفاعل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/61ce4dfa-db8b-4c22-9368-a550416af4be.mp3"
+    },
+    {
+      "id": "question-q16",
+      "transcript": "ما المفعول به في هذه الجملة؟ سَقَى الْفَلّاحُ الزَّرْعَ. الخيارات: 1: سَقَى. 2: الْفَلّاحُ. 3: الزَّرْعَ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f22135e2-213f-4287-a561-9572cc1df6e1.mp3"
+    },
+    {
+      "id": "explain-q17",
+      "transcript": "الطّالِبَانِ فاعل مرفوع، وعلامة رفعه الألف لأنّه مثنّى.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f79e2212-3571-4ba9-aaf1-b5cf10cf06bd.mp3"
+    },
+    {
+      "id": "question-q17",
+      "transcript": "ما علامة رفع الفاعل «الطّالِبَانِ»؟ حَضَرَ الطّالِبَانِ. الخيارات: 1: الألف. 2: الواو. 3: الفتحة.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/ff466cef-b1c8-46c3-b153-2b4dc980f6d4.mp3"
+    },
+    {
+      "id": "explain-q18",
+      "transcript": "اُكْتُبْ فعل أمر، وفاعله ضمير مستتر وجوبًا تقديره أنت. عدم ظهور الفاعل لا يعني عدم وجوده.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/2ba16b98-d253-429d-b345-e7f673c10325.mp3"
+    },
+    {
+      "id": "question-q18",
+      "transcript": "أين الفاعل في هذا الأمر؟ اُكْتُبْ. الخيارات: 1: لا يوجد فاعل إطلاقًا. 2: ضمير مستتر تقديره أنت. 3: كلمة اُكْتُبْ هي الفاعل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/06277d12-21e2-4748-8094-685f88c2ba79.mp3"
+    },
+    {
+      "id": "explain-q19",
+      "transcript": "يَحْفَظُ فعل مضارع؛ يدلّ على الحفظ في الحاضر أو المستقبل. والطَّالِبُ فاعل، والنَّصَّ مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9e283f63-25c9-4456-b770-6aad79160f8e.mp3"
+    },
+    {
+      "id": "question-q19",
+      "transcript": "ما نوع الفعل «يَحْفَظُ»؟ يَحْفَظُ الطَّالِبُ النَّصَّ. الخيارات: 1: فعل ماضٍ. 2: فعل مضارع. 3: فعل أمر.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f44506e4-d8c5-49dd-ad0c-171af2a1fa27.mp3"
+    },
+    {
+      "id": "explain-q20",
+      "transcript": "الرِّيحُ فاعل مرفوع بالضمّة. قد يكون الفاعل غير عاقل؛ فليس الفاعل إنسانًا دائمًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/1c8a66c9-b9d1-486f-b22e-bc570fbd0eb3.mp3"
+    },
+    {
+      "id": "question-q20",
+      "transcript": "ما الفاعل في هذه الجملة؟ هَبَّتِ الرِّيحُ. الخيارات: 1: الرِّيحُ. 2: هَبَّتْ. 3: لا يوجد فاعل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f7fabd77-9f23-472c-9804-56e50c2703b1.mp3"
+    },
+    {
+      "id": "explain-q21",
+      "transcript": "الْمَرِيضَ مفعول به منصوب بالفتحة؛ لأنّ المساعدة وقعت عليه. وقد يكون المفعول به إنسانًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/bbf9bcd6-29da-4944-a41e-c3f9cd21476d.mp3"
+    },
+    {
+      "id": "question-q21",
+      "transcript": "أيّ كلمة هي المفعول به؟ سَاعَدَ الطَّبِيبُ الْمَرِيضَ. الخيارات: 1: سَاعَدَ. 2: الطَّبِيبُ. 3: الْمَرِيضَ.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/cbc0220f-4c23-48e4-b5cc-e30bd9f2b371.mp3"
+    },
+    {
+      "id": "explain-q22",
+      "transcript": "الْكِتَابَ مفعول به منصوب، وإن تقدّم على الفاعل. خَالِدٌ هو الذي قرأ، فهو الفاعل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/43b4cbc2-f42e-4afc-84f4-d8392ba14f02.mp3"
+    },
+    {
+      "id": "question-q22",
+      "transcript": "ما إعراب «الْكِتَابَ»؟ قَرَأَ الْكِتَابَ خَالِدٌ. الخيارات: 1: فاعل مرفوع. 2: مفعول به منصوب. 3: مبتدأ مرفوع.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c50bab0a-820a-472c-a223-58976067baf4.mp3"
+    },
+    {
+      "id": "explain-q23",
+      "transcript": "الطِّفْلُ فاعل مرفوع؛ فالفاعل قد يقوم بالفعل أو يتّصف به، والنوم هنا مسند إلى الطفل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/8ef98ef9-e5a1-4d60-9b8a-30bb68fbe327.mp3"
+    },
+    {
+      "id": "question-q23",
+      "transcript": "هل «الطِّفْلُ» فاعل؟ نَامَ الطِّفْلُ. الخيارات: 1: نعم؛ لأنّه اتّصف بالنوم. 2: لا؛ لأنّه لم يفعل شيئًا بيده. 3: لا؛ لأنّ الجملة بلا مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a6760374-aa5f-4c04-8f10-696c77426625.mp3"
+    },
+    {
+      "id": "explain-q24",
+      "transcript": "الْمَدْرَسَةِ اسم مجرور بالكسرة؛ لأنّه جاء بعد حرف الجر «إلى». وليس كلّ اسم بعد الفعل مفعولًا به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/34edcc0f-483c-410c-874a-a37d6312f377.mp3"
+    },
+    {
+      "id": "question-q24",
+      "transcript": "ما إعراب «الْمَدْرَسَةِ»؟ ذَهَبَ الطَّالِبُ إِلَى الْمَدْرَسَةِ. الخيارات: 1: مفعول به منصوب. 2: فاعل مرفوع. 3: اسم مجرور بحرف الجر.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a21c9e06-848f-4b5e-9319-644dcdc6e0b5.mp3"
+    },
+    {
+      "id": "explain-q25",
+      "transcript": "فَاطِمَةُ فاعل مرفوع بالضمّة، والْبَابَ مفعول به منصوب بالفتحة. نحدّد صاحب الفعل أولًا.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f36b1b53-e412-4158-8327-3a2b150c0b85.mp3"
+    },
+    {
+      "id": "question-q25",
+      "transcript": "أيّ ضبط صحيح إذا كانت فاطمة هي التي فتحت؟  الخيارات: 1: فَتَحَتْ فَاطِمَةَ الْبَابُ.. 2: فَتَحَتْ فَاطِمَةُ الْبَابَ.. 3: فَتَحَتْ فَاطِمَةِ الْبَابِ..",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/4f279dd4-e008-46de-873c-3c723d7e6c83.mp3"
+    },
+    {
+      "id": "explain-q26",
+      "transcript": "وَصَلَ الْمُسَافِرُ جملة تامّة اكتفت بالفعل والفاعل، ولم تشتمل على مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/daaf0a51-9f3f-4afa-bc4e-8264ff54b800.mp3"
+    },
+    {
+      "id": "question-q26",
+      "transcript": "أيّ جملة اكتفت بالفعل والفاعل؟  الخيارات: 1: وَصَلَ الْمُسَافِرُ.. 2: كَتَبَ الْوَلَدُ رِسَالَةً.. 3: رَسَمَتْ مَرْيَمُ لَوْحَةً..",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d5362f1b-8b94-42e6-9620-776615ac428f.mp3"
+    },
+    {
+      "id": "explain-q27",
+      "transcript": "الشَّجَرَةَ مفعول به؛ لأنّها ما زرعه الفلّاح. السبب هو المعنى، وتؤكّد الفتحة علامتها الإعرابية.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f4dfa70d-14f5-4f73-8fe8-60b08f557089.mp3"
+    },
+    {
+      "id": "question-q27",
+      "transcript": "لماذا كانت «الشَّجَرَةَ» مفعولًا به؟ زَرَعَ الْفَلَّاحُ الشَّجَرَةَ. الخيارات: 1: لأنّها قامت بالزراعة. 2: لأنّها جاءت بعد كلمتين فقط. 3: لأنّ الزراعة وقعت عليها.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/17b9523c-d50f-4889-9483-ad61a7bad823.mp3"
+    },
+    {
+      "id": "explain-q28",
+      "transcript": "الفاعل مرفوع، والمفعول به منصوب. وفي أمثلتنا من الأسماء المفردة، تظهر الضمّة للرفع والفتحة للنصب.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9eced6c0-f656-4813-9f2c-b1ae6d210c4c.mp3"
+    },
+    {
+      "id": "question-q28",
+      "transcript": "اختر العبارة الصحيحة.  الخيارات: 1: الفاعل منصوب والمفعول به مرفوع. 2: الفاعل مرفوع والمفعول به منصوب. 3: الفاعل والمفعول به مجروران.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/5e956dca-c4e4-428c-a864-13ff2ca1e025.mp3"
+    },
+    {
+      "id": "explain-q29",
+      "transcript": "الْبَابَ مفعول به منصوب، والْحَارِسُ فاعل مرفوع. ترتيب الكلمات وحده لا يكفي لتحديد الدور.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/0b75f7a8-0542-40bc-98f8-3f4034ae503f.mp3"
+    },
+    {
+      "id": "question-q29",
+      "transcript": "هل «الْبَابَ» فاعل لأنّه جاء بعد الفعل مباشرة؟ فَتَحَ الْبَابَ الْحَارِسُ. الخيارات: 1: لا؛ هو مفعول به، والحارس هو الفاعل. 2: نعم؛ أوّل اسم بعد الفعل فاعل دائمًا. 3: لا؛ هو فعل آخر.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/42eb31ca-db46-413c-8053-bb484ed3e8dd.mp3"
+    },
+    {
+      "id": "explain-q30",
+      "transcript": "حَمَلَ فعل ماضٍ. الْعَامِلُ فاعل مرفوع؛ فهو مَن حمل. الصُّنْدُوقَ مفعول به منصوب؛ فهو ما حمله العامل.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d5f5f98f-43ea-4f02-933d-7a530b0b5e0d.mp3"
+    },
+    {
+      "id": "question-q30",
+      "transcript": "اختر تحليلًا صحيحًا للجملة. حَمَلَ الْعَامِلُ الصُّنْدُوقَ. الخيارات: 1: حَمَلَ: فاعل؛ الْعَامِلُ: فعل؛ الصُّنْدُوقَ: مفعول به. 2: حَمَلَ: فعل؛ الْعَامِلُ: مفعول به؛ الصُّنْدُوقَ: فاعل. 3: حَمَلَ: فعل؛ الْعَامِلُ: فاعل؛ الصُّنْدُوقَ: مفعول به.",
+      "url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/2613c992-4e9a-4e90-a64d-6f71da097a9d.mp3"
+    }
+  ]
+}

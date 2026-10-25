@@ -1,0 +1,36 @@
+name: Prepare embedded narration
+on:
+  push:
+    paths:
+      - content/narration-manifest.json
+      - .github/workflows/narration.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and validate generated recordings
+        run: |
+          python3 - <<'PY'
+          import concurrent.futures, json, pathlib, urllib.request
+          root=pathlib.Path('assets/audio');root.mkdir(parents=True,exist_ok=True)
+          clips=json.loads(pathlib.Path('content/narration-manifest.json').read_text())['clips']
+          def get(clip):
+              assert clip['url'].startswith('https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/')
+              with urllib.request.urlopen(clip['url'],timeout=90) as response: data=response.read()
+              assert len(data)>1500 and (data.startswith(b'ID3') or data[0]==255), clip['id']
+              (root/(clip['id']+'.mp3')).write_bytes(data)
+              return clip['id']
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              for name in pool.map(get,clips):print(name)
+          print('Downloaded',len(clips),'recordings')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: embedded-narration
+          path: assets/audio/*.mp3
+          retention-days: 7
+          if-no-files-found: error
