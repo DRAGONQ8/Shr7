@@ -25,16 +25,16 @@ def prepare():
         key=clip['id'];path=ASSETS/(key+'.mp3');fingerprint=hashlib.sha256(clip['transcript'].encode()).hexdigest()
         item=previous.get(key,{})
         if path.exists() and item.get('transcript_sha256')==fingerprint and item.get('sha256')==hashlib.sha256(path.read_bytes()).hexdigest():return key,item
-        if not path.exists():
-            embedded=old.get('audio',{}).get(key,{})
-            if embedded.get('src','').startswith('data:audio/') and embedded.get('transcript')==clip['transcript']:
-                path.write_bytes(base64.b64decode(embedded['src'].split(',')[1]))
-            else:
-                url=clip['url'];assert url.startswith('https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/')
-                with urllib.request.urlopen(url,timeout=90) as response:path.write_bytes(response.read())
-        normalized=ASSETS/(key+'.normalized.mp3')
-        subprocess.run(['ffmpeg','-nostdin','-loglevel','error','-y','-i',str(path),'-map_metadata','-1','-ac','1','-ar','24000','-b:a','64k','-write_xing','0',str(normalized)],check=True)
-        normalized.replace(path)
+        embedded=old.get('audio',{}).get(key,{})
+        if embedded.get('src','').startswith('data:audio/') and embedded.get('transcript')==clip['transcript']:
+            # Reusing an embedded recording must not repeatedly re-encode it.
+            path.write_bytes(base64.b64decode(embedded['src'].split(',')[1]))
+        else:
+            url=clip['url'];assert url.startswith('https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/')
+            with urllib.request.urlopen(url,timeout=90) as response:path.write_bytes(response.read())
+            normalized=ASSETS/(key+'.normalized.mp3')
+            subprocess.run(['ffmpeg','-nostdin','-loglevel','error','-y','-i',str(path),'-map_metadata','-1','-ac','1','-ar','24000','-b:a','64k','-write_xing','0',str(normalized)],check=True)
+            normalized.replace(path)
         probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','json',str(path)]))
         duration=float(probe['format']['duration']);assert duration>0.3,key
         return key,{'transcript_sha256':fingerprint,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'duration':round(duration,3)}
@@ -43,3 +43,4 @@ def prepare():
     print('Prepared',len(info),'recordings;',round(sum(i['duration'] for i in info.values()),1),'seconds;',sum(p.stat().st_size for p in ASSETS.glob('*.mp3')),'bytes')
 
 if __name__=='__main__':prepare()
+

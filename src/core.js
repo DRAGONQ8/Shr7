@@ -6,6 +6,9 @@ var Core = (() => {
   return {...answers,[q.id]:{choice,correct:choice===q.answer}};
  }
  function record(answers,id) { return Object.hasOwn(answers,id)?answers[id]:undefined; }
+ function questionAudio(question,answers,enabled,automatic) {
+  return question&&enabled&&automatic&&!record(answers,question.id)?'question-'+question.id:'';
+ }
  function score(questions,answers) {
   let correct=0,answered=0;
   for(const q of questions) { const a=record(answers,q.id);if(a){answered++;if(a.correct)correct++;} }
@@ -93,5 +96,6 @@ var Core = (() => {
   return Math.min(30000,Math.max(12000,Number(seconds)*1000||12000,String(text).length*55));
  }
  function scriptJSON(value){return JSON.stringify(value).replace(/</g,'\\u003c');}
- return {escape,answer,score,record,isOrder,validate,matchAudio,fingerprint,voice,audioRoute,progress,mediaPatch,scriptJSON,selectQuestions,noticeDelay};
+ return {escape,answer,score,record,questionAudio,isOrder,validate,matchAudio,fingerprint,voice,audioRoute,progress,mediaPatch,scriptJSON,selectQuestions,noticeDelay};
 })();
+

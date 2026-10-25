@@ -14,17 +14,17 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.56.1-noble
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install test browsers
+      - name: Install test tools
         run: |
           npm install --ignore-scripts
-          npx playwright install --with-deps chromium webkit
-          sudo apt-get install -y ffmpeg
+          if ! command -v ffmpeg >/dev/null; then apt-get update && apt-get install -y ffmpeg; fi
       - name: Prepare embedded media
         run: python3 scripts/prepare_media.py
       - name: Build the standalone HTML
@@ -42,3 +42,4 @@ jobs:
             khaled-nahw-interactive.html
             artifacts/
           retention-days: 7
+

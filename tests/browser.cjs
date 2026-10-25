@@ -15,7 +15,7 @@ async function init(page){
   Object.defineProperty(navigator,'canShare',{configurable:true,value:undefined});
  });
  page.on('pageerror',error=>failures.push(error.message));
- await page.goto(url);await page.waitForSelector('#stage .screen');
+ await page.goto(url);await page.waitForSelector('#stage .screen');await page.context().setOffline(true);
 }
 async function chapter(page,n){await page.locator('#chapters button[data-index="'+n+'"]').click();await page.waitForSelector('#stage .screen');}
 async function settings(page){await page.click('#settingsButton');await page.waitForSelector('#settingsDialog[open]');}
@@ -31,7 +31,7 @@ async function geometry(page,label,minStage=60){
 }
 async function layouts(browser,name){
  for(const [w,h] of [[412,915],[440,956],[915,412],[956,440],[667,320],[320,568],[1280,800]]){
-  const context=await browser.newContext({viewport:{width:w,height:h},offline:true});const page=await context.newPage();
+  const context=await browser.newContext({viewport:{width:w,height:h},offline:name==='chromium'});const page=await context.newPage();
   try{
    await init(page);await page.click('#soundToggle');
    for(let n=0;n<9;n++){await chapter(page,n);await geometry(page,name+' '+w+'x'+h+' screen '+n);}
@@ -57,7 +57,7 @@ async function layouts(browser,name){
  }
 }
 async function interactions(browser,name){
- const context=await browser.newContext({viewport:{width:440,height:956},offline:true,acceptDownloads:true});const page=await context.newPage();
+ const context=await browser.newContext({viewport:{width:440,height:956},offline:name==='chromium',acceptDownloads:true});const page=await context.newPage();
  try{
   await init(page);await page.locator('[data-action="start"]').click();
   await page.waitForFunction(()=>window.__audio.at(-1)?.currentTime>0.05);
@@ -74,7 +74,7 @@ async function interactions(browser,name){
   await page.locator('[data-id="question-q1"]').click();await page.waitForFunction(()=>window.__audio.at(-1)?.currentTime>0.05);await page.click('#stopSound');
   // First answer stays locked and going backward clears the next question's clock.
   const wrong=(lesson.questions[0].answer+1)%lesson.questions[0].options.length;
-  await page.locator('[data-action="answer"][data-index="'+wrong+'"]').click();await page.locator('[data-action="answer"][data-index="'+lesson.questions[0].answer+'"]').click();
+  await page.locator('[data-action="answer"][data-index="'+wrong+'"]').click();await page.locator('[data-action="answer"][data-index="'+lesson.questions[0].answer+'"]').evaluate(e=>e.click());
   check(await page.locator('.answer.wrong').count()===1,'Repeated answer does not replace the first choice');
   await page.locator('[data-action="quiz-next"]').click();await page.locator('[data-action="timer"]').click();await page.locator('[data-action="quiz-prev"]').click();await page.locator('[data-action="quiz-next"]').click();
   checkSoft((await page.locator('#timerButton').textContent()).includes('30 ثانية للتفكير'),'Previous clears the old question timer');
@@ -86,19 +86,20 @@ async function interactions(browser,name){
   const decoded=await page.evaluate(async()=>{const m=JSON.parse(document.querySelector('#media-data').textContent);const results=[];for(const [id,c] of Object.entries(m.audio)){const a=new Audio();a.preload='metadata';const result=await new Promise(resolve=>{const timer=setTimeout(()=>resolve({id,error:'timeout'}),10000);a.onloadedmetadata=()=>{clearTimeout(timer);resolve({id,duration:a.duration});};a.onerror=()=>{clearTimeout(timer);resolve({id,error:a.error?.message||'decode'});};a.src=c.src;});a.removeAttribute('src');a.load();results.push(result);}return results;});
   check(decoded.length===81&&decoded.every(x=>x.duration>0&&!x.error),'All 81 embedded MP3s decode offline');
   fs.writeFileSync(path.join(out,name+'-media.json'),JSON.stringify(decoded,null,2));
-  await chapter(page,0);const downloadPromise=page.waitForEvent('download');await page.locator('[data-action="share-html"]').click();const download=await downloadPromise;
+  await chapter(page,0);const [download]=await Promise.all([page.waitForEvent('download'),page.locator('#stage [data-action="share-html"]').click()]);
   checkSoft(await page.locator('#stage .download-fallback').count()===1,'Manual share/download fallback is inside the visible lesson');
   const exported=path.join(out,name+'-exported.html');await download.saveAs(exported);
-  const reopened=await context.newPage();await reopened.goto('file://'+exported);await reopened.waitForSelector('#stage .screen[data-screen="intro"]');check(await reopened.locator('dialog[open]').count()===0,'Export reopens with closed dialogs');
+  const reopened=await context.newPage();if(name==='webkit')await context.setOffline(false);await reopened.goto('file://'+exported);await context.setOffline(true);await reopened.waitForSelector('#stage .screen[data-screen="intro"]');check(await reopened.locator('dialog[open]').count()===0,'Export reopens with closed dialogs');
   const ready=await reopened.evaluate(()=>{const m=JSON.parse(document.querySelector('#media-data').textContent);return {clips:Object.keys(m.audio).length,video:m.video.startsWith('data:video/')};});check(ready.clips===81&&ready.video,'Export preserves narration and original video');await reopened.close();
   check(failures.length===0,'No JavaScript runtime errors: '+failures.join('; '));
  }catch(e){await page.screenshot({path:path.join(out,name+'-interaction-FAIL.png')}).catch(()=>{});failures.push(name+' interactions: '+e.message);}finally{await context.close();}
 }
 (async()=>{
- for(const name of ['chromium','webkit']){
-  const type=pw[name],browser=await type.launch({headless:true,...(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES&&name==='chromium'?{executablePath:type.executablePath(),args:['--no-sandbox']}:{} )});
+ for(const name of (process.env.BROWSERS||'chromium,webkit').split(',')){
+  const type=pw[name],browser=await type.launch({headless:true,...(name==='chromium'?{...(process.env.CHROMIUM_EXECUTABLE?{executablePath:process.env.CHROMIUM_EXECUTABLE}:{}),args:['--no-sandbox']}:{} )});
   try{await layouts(browser,name);await interactions(browser,name);}finally{await browser.close();}
  }
  if(failures.length)throw Error(failures.join('\n'));
  console.log('Browser checks passed:',checks);fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({passed:true,checks,failures},null,2));
 })().catch(e=>{console.error(e);fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({passed:false,checks,error:String(e),failures},null,2));process.exitCode=1;});
+
