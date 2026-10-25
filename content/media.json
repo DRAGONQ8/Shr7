@@ -1,0 +1,9 @@
+{
+  "video": "assets/teacher-video.mp4",
+  "poster": "assets/video-poster.jpg",
+  "audio": {},
+  "effects": {
+    "correct": "assets/audio/effect-correct.wav",
+    "incorrect": "assets/audio/effect-incorrect.wav"
+  }
+}

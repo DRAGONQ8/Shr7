@@ -1,0 +1,43 @@
+name: Build and verify classroom lesson
+on:
+  push:
+    paths:
+      - src/**
+      - content/**
+      - scripts/**
+      - tests/**
+      - package.json
+      - .github/workflows/build.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install test browsers
+        run: |
+          npm install --ignore-scripts
+          npx playwright install --with-deps chromium webkit
+      - name: Prepare embedded media
+        run: python3 scripts/prepare_media.py
+      - name: Build the standalone HTML
+        run: npm run build
+      - name: Validate content and offline recordings
+        run: npm test
+      - name: Browser regression tests
+        run: npm run test:browser
+      - name: Retain HTML and verification screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: classroom-lesson-verified
+          path: |
+            khaled-nahw-interactive.html
+            artifacts/
+          retention-days: 7

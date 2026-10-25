@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f2eb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="description" content="رحلة تفاعلية قصيرة مع خالد لفهم الفعل والفاعل والمفعول به، مع أمثلة وأنشطة وأسئلة قابلة للتعديل.">
+<title>رحلة الجملة | خالد</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231c504b'/%3E%3Ctext x='32' y='43' font-size='40' text-anchor='middle' fill='white'%3Eع%3C/text%3E%3C/svg%3E">
+<style>/*__STYLES__*/</style>
+</head>
+<body>
+<a class="skip" href="#stage">تجاوز إلى محتوى الدرس</a>
+<div class="app" id="app">
+ <header class="topbar"><div class="brand"><div class="brand-mark" aria-hidden="true">ع</div><div><b id="brandTitle">رحلة الجملة</b><small id="brandSub">تعلّم • شارك • اكتشف</small></div></div><div class="tools"><button class="icon-btn" id="soundToggle" aria-label="إيقاف الصوت" aria-pressed="true"></button><button class="icon-btn" id="fullToggle" aria-label="ملء الشاشة"></button><button class="icon-btn help-tool" id="helpButton" aria-label="طريقة الاستخدام"></button><button class="icon-btn" id="settingsButton" aria-label="الإعدادات"></button><button class="icon-btn" id="editorButton" aria-label="تعديل المحتوى"></button></div></header>
+ <nav class="chapterbar" id="chapters" aria-label="مراحل العرض"></nav>
+ <main class="stage" id="stage" tabindex="-1"></main>
+<aside class="narration-bar" id="narrationBar" aria-label="التعليق الصوتي ونصه" hidden><div class="narration-copy"><small id="audioState">المساعد الصوتي</small><p class="sound-caption" id="soundCaption"></p></div><div class="narration-controls"><button data-action="replay-narration" aria-label="إعادة الاستماع">↻</button><button id="stopSound" aria-label="إغلاق النص وإيقاف الصوت"></button></div></aside>
+<div class="status" id="toast" role="status" hidden><span id="toastText"></span><button id="closeToast" aria-label="إغلاق التنبيه">×</button></div>
+ <footer class="footer"><button class="btn secondary" id="prevButton"></button><div class="progress-area"><small id="pageLabel"></small><div class="track" role="progressbar" aria-label="تقدّم العرض" aria-valuemin="0" aria-valuemax="9" id="progress"><div class="fill" id="progressFill"></div></div></div><div class="button-row"><button class="icon-btn zen-exit" id="zenExit" aria-label="إظهار أدوات العرض">الأدوات</button><button class="btn" id="nextButton"></button></div></footer>
+</div>
+<div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>
+<dialog class="dialog settings" id="settingsDialog" aria-labelledby="settingsTitle"><div class="dialog-header"><h2 id="settingsTitle">إعدادات العرض</h2><button class="icon-btn close-dialog" aria-label="إغلاق">×</button></div><div class="dialog-body" id="settingsBody"></div></dialog>
+<dialog class="dialog" id="editorDialog" aria-labelledby="editorTitle"><div class="dialog-header"><h2 id="editorTitle">مساحة خالد للتعديل</h2><button class="icon-btn close-dialog" aria-label="إغلاق">×</button></div><div class="dialog-body" id="editorBody"></div></dialog>
+<dialog class="dialog settings" id="helpDialog" aria-labelledby="helpTitle"><div class="dialog-header"><h2 id="helpTitle">جاهز للعرض</h2><button class="icon-btn close-dialog" aria-label="إغلاق">×</button></div><div class="dialog-body"><p>اضغط «خلّونا نبدأ» لتشغيل الترحيب. تنقّل بين المراحل من الشريط العلوي أو زري السابق والتالي. لا ينتقل العرض تلقائيًا بعد الأسئلة؛ أنت تتحكّم بالإيقاع.</p><br><p><strong>للطلبة:</strong> المس الكلمات لتكتشف أدوارها. في التحدّي تُحسب أول إجابة فقط، ثم يظهر التفسير. يمكنك إظهار التلميح قبل الاختيار.</p><br><p><strong>للعارض:</strong> من الإعدادات فعّل «النص الكبير»، أو «إخفاء الأدوات» لعرض أوسع. لوحة المفاتيح: السهم الأيسر أو Page Down للتالي، والأيمن أو Page Up للسابق. اضغط Escape لإغلاق النوافذ أو إظهار الأدوات.</p><br><p><strong>التعديل:</strong> غيّر النصوص والأسئلة، ثم احفظ. نزّل نسخة HTML بعد أي تعديل أو استبدال للصوت أو الفيديو؛ النسخة المنزّلة تحمل التعديلات. يُحفظ تقدّم العرض على هذا المتصفح، ويمكنك متابعته من شاشة البداية بعد العودة.</p><div class="fullscreen-help">ملء الشاشة يحتاج ضغطة منك ودعم المتصفح. على iPhone قد تبقى أدوات Safari؛ من رابط الموقع يمكنك تجربة «مشاركة ← إضافة إلى الشاشة الرئيسية»، ثم فتحه من الأيقونة. يظل العرض قابلًا للاستخدام إذا لم يتوفر ملء الشاشة.</div><br><p><strong>الصوت:</strong> يُفضّل التسجيل المضمّن إن وُجد، ثم الصوت العربي بالجهاز. التسجيلات العربية مدمجة داخل نسخة HTML وتعمل دون اتصال. يمكنك تعطيل التشغيل التفاعلي من الإعدادات، وتشغيل أي شرح يدويًا. يمكنك تضمين أي تسجيل صوتي بديل من المحرّر. أوقف الوضع الصامت وارفع صوت الوسائط قبل العرض.</p></div></dialog>
+<noscript>هذا الدرس يحتاج إلى تفعيل JavaScript في المتصفح.</noscript>
+<script id="lesson-data" type="application/json">/*__CONTENT__*/</script>
+<script id="media-data" type="application/json">/*__MEDIA__*/</script>
+<script id="lesson-core">/*__CORE__*/</script>
+<script id="lesson-storage">/*__STORAGE__*/</script>
+<script id="lesson-app">/*__APP__*/</script>
+</body>
+</html>

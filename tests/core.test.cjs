@@ -1,0 +1,15 @@
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const ctx={};vm.createContext(ctx);vm.runInContext(fs.readFileSync(root+'/src/core.js','utf8'),ctx);
+const C=ctx.Core,lesson=JSON.parse(fs.readFileSync(root+'/content/lesson.json','utf8'));
+test('question bank has 30 valid, unambiguous answer records',()=>{assert.equal(lesson.questions.length,30);assert.equal(C.validate(lesson).ok,true);assert.equal(new Set(lesson.questions.map(q=>q.prompt+'|'+q.sentence)).size,30);});
+test('first answer is counted once, including an incorrect first attempt',()=>{const q=lesson.questions[0];let a=C.answer({},q,0);a=C.answer(a,q,q.answer);assert.equal(a[q.id].choice,0);assert.equal(C.score([q],a).correct,0);assert.equal(C.score([q],a).answered,1);assert.throws(()=>C.answer({},q,99));});
+test('small quiz samples the whole bank and keeps the original bank intact',()=>{const before=JSON.stringify(lesson.questions);const qs=C.selectQuestions(lesson.questions,5);assert.equal(qs.length,5);assert.equal(new Set(qs.map(q=>q.id)).size,5);assert.equal(qs[0].id,'q1');assert.equal(qs.at(-1).id,'q30');assert.equal(JSON.stringify(lesson.questions),before);});
+test('long notices last at least 12 seconds and can be persistent',()=>{assert.equal(C.noticeDelay('تم الحفظ',12),12000);assert.equal(C.noticeDelay('أ'.repeat(400),12),22000);assert.equal(C.noticeDelay('تعليق دائم',0),0);});
+test('recording falls back safely when edited transcript differs',()=>{const clip={transcript:'نص قديم',src:'data:audio/mpeg;base64,AAAA'};assert.equal(C.audioRoute('نص جديد',clip,false),'unavailable');assert.equal(C.audioRoute('نص قديم',clip,false),'embedded');});
+test('rendered content cannot inject markup or closing script tags',()=>{assert.equal(C.escape('<img src=x>'),'&lt;img src=x&gt;');assert.equal(C.scriptJSON({x:'</script>'}).includes('</script>'),false);});
+test('new stage recordings can be replaced or removed and survive sanitation',()=>{for(const id of ['goals','explore','quiz','build']){const clip={src:'data:audio/mpeg;base64,AAAA',transcript:'شرح'};assert.equal(C.mediaPatch({audio:{[id]:clip}}).audio[id]?.transcript,'شرح');assert.equal(C.mediaPatch({audio:{[id]:null}}).audio[id],null);}});
