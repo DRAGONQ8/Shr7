@@ -5,6 +5,7 @@ const url='file://'+path.join(ROOT,'khaled-nahw-interactive.html');
 const lesson=JSON.parse(fs.readFileSync(ROOT+'/content/lesson.json','utf8'));
 let checks=0;const failures=[];
 function check(value,message){checks++;assert.ok(value,message);}
+function checkSoft(value,message){checks++;if(!value)failures.push(message);}
 async function init(page){
  await page.addInitScript(()=>{
   const OriginalAudio=window.Audio;window.__audio=[];
@@ -52,7 +53,7 @@ async function layouts(browser,name){
     await page.click('#zenExit');await settings(page);await page.locator('#settingsBody').evaluate(e=>e.scrollTop=e.scrollHeight);await closeSettings(page);
     if(actual)await page.evaluate(()=>document.exitFullscreen());
    }
-  }catch(e){await page.screenshot({path:path.join(out,name+'-'+w+'x'+h+'-FAIL.png')}).catch(()=>{});throw e;}finally{await context.close();}
+  }catch(e){await page.screenshot({path:path.join(out,name+'-'+w+'x'+h+'-FAIL.png')}).catch(()=>{});failures.push(name+' '+w+'x'+h+': '+e.message);}finally{await context.close();}
  }
 }
 async function interactions(browser,name){
@@ -76,7 +77,7 @@ async function interactions(browser,name){
   await page.locator('[data-action="answer"][data-index="'+wrong+'"]').click();await page.locator('[data-action="answer"][data-index="'+lesson.questions[0].answer+'"]').click();
   check(await page.locator('.answer.wrong').count()===1,'Repeated answer does not replace the first choice');
   await page.locator('[data-action="quiz-next"]').click();await page.locator('[data-action="timer"]').click();await page.locator('[data-action="quiz-prev"]').click();await page.locator('[data-action="quiz-next"]').click();
-  check((await page.locator('#timerButton').textContent()).includes('30 ثانية للتفكير'),'Previous clears the old question timer');
+  checkSoft((await page.locator('#timerButton').textContent()).includes('30 ثانية للتفكير'),'Previous clears the old question timer');
   for(let i=1;i<lesson.questions.length;i++){await page.locator('[data-action="answer"][data-index="'+lesson.questions[i].answer+'"]').click();await page.locator('[data-action="quiz-next"]').click();}
   check((await page.locator('.result-circle').textContent()).replace(/\s/g,'')==='29من30','Full quiz result counts 29 of 30');
   await page.locator('[data-action="retry-mistakes"]').click();check((await page.locator('.quiz-count').textContent()).includes('1 / 1'),'Retry contains only the mistaken question');await page.locator('[data-action="answer"][data-index="'+lesson.questions[0].answer+'"]').click();await page.locator('[data-action="quiz-next"]').click();
@@ -86,17 +87,18 @@ async function interactions(browser,name){
   check(decoded.length===81&&decoded.every(x=>x.duration>0&&!x.error),'All 81 embedded MP3s decode offline');
   fs.writeFileSync(path.join(out,name+'-media.json'),JSON.stringify(decoded,null,2));
   await chapter(page,0);const downloadPromise=page.waitForEvent('download');await page.locator('[data-action="share-html"]').click();const download=await downloadPromise;
-  check(await page.locator('#stage .download-fallback').count()===1,'Manual share/download fallback is inside the visible lesson');
+  checkSoft(await page.locator('#stage .download-fallback').count()===1,'Manual share/download fallback is inside the visible lesson');
   const exported=path.join(out,name+'-exported.html');await download.saveAs(exported);
   const reopened=await context.newPage();await reopened.goto('file://'+exported);await reopened.waitForSelector('#stage .screen[data-screen="intro"]');check(await reopened.locator('dialog[open]').count()===0,'Export reopens with closed dialogs');
   const ready=await reopened.evaluate(()=>{const m=JSON.parse(document.querySelector('#media-data').textContent);return {clips:Object.keys(m.audio).length,video:m.video.startsWith('data:video/')};});check(ready.clips===81&&ready.video,'Export preserves narration and original video');await reopened.close();
   check(failures.length===0,'No JavaScript runtime errors: '+failures.join('; '));
- }catch(e){await page.screenshot({path:path.join(out,name+'-interaction-FAIL.png')}).catch(()=>{});throw e;}finally{await context.close();}
+ }catch(e){await page.screenshot({path:path.join(out,name+'-interaction-FAIL.png')}).catch(()=>{});failures.push(name+' interactions: '+e.message);}finally{await context.close();}
 }
 (async()=>{
  for(const name of ['chromium','webkit']){
   const type=pw[name],browser=await type.launch({headless:true,...(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES&&name==='chromium'?{executablePath:type.executablePath(),args:['--no-sandbox']}:{} )});
   try{await layouts(browser,name);await interactions(browser,name);}finally{await browser.close();}
  }
+ if(failures.length)throw Error(failures.join('\n'));
  console.log('Browser checks passed:',checks);fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({passed:true,checks,failures},null,2));
 })().catch(e=>{console.error(e);fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify({passed:false,checks,error:String(e),failures},null,2));process.exitCode=1;});
